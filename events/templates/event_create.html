@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Create Event</h3>
+
+<form method="post">
+    {% csrf_token %}
+    <input class="form-control" name="title" placeholder="Title"><br>
+    <textarea class="form-control" name="description" placeholder="Description"></textarea><br>
+    <input class="form-control" name="location" placeholder="Location"><br>
+    <label>Date</label>
+    <input type="date" name="date" required>
+
+    <label>Start Time</label>
+    <input type="time" name="start_time" required>
+
+    <label>End Time</label>
+    <input type="time" name="end_time" required>
+
+    <button class="btn btn-success">Create</button>
+</form>
+{% endblock %}

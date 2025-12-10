@@ -1,0 +1,15 @@
+    {% extends 'base.html' %}
+{% block content %}
+<h3>All Events</h3>
+
+<a href="/create-event/" class="btn btn-primary">Create Event</a>
+<hr>
+
+{% for event in events %}
+<div class="card p-3 mb-2">
+    <h4>{{ event.title }}</h4>
+    <p>{{ event.location }}</p>
+    <a href="/event/{{ event.id }}/" class="btn btn-dark">View</a>
+</div>
+{% endfor %}
+{% endblock %}
